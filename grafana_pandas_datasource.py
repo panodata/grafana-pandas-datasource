@@ -149,7 +149,7 @@ def _series_to_annotations(df, target):
 def _series_to_response(df, target):
     if df.empty:
         return {'target': '%s' % (target),
-                'datapoints': []}
+                'datapoints': zip(values, timestamps)}
 
     sorted_df = df.dropna().sort_index()
 
